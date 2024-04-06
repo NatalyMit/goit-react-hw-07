@@ -3,7 +3,7 @@ import Contact from '../Contact/Contact';
 import css from './ContactList.module.css';
 
 import { selectNameFilter } from '../../redux/filtersSlice';
-import { selectContacts } from '../../redux/contactsSlice';
+import { selectContacts } from '../../redux/selectors';
 
 const getFilterContacts = (contacts, filters) => {
   return contacts.filter(contact =>

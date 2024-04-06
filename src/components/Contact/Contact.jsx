@@ -3,7 +3,7 @@ import { ImUser } from 'react-icons/im';
 import css from './Contact.module.css';
 import { MdOutlineDeleteForever } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsSlice';
+import { deleteContact } from '../../redux/contactsOps';
 
 const Contact = ({ data: { id, name, number } }) => {
   const dispatch = useDispatch();

@@ -4,8 +4,8 @@ import * as Yup from 'yup';
 import { MdOutlineGroupAdd } from 'react-icons/md';
 import css from './ContactForm.module.css';
 
-import { addContact } from '../../redux/contactsSlice';
-import { nanoid } from 'nanoid';
+import { addContact } from '../../redux/contactsOps';
+
 import { useDispatch } from 'react-redux';
 
 const contactSchema = Yup.object().shape({
@@ -28,8 +28,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    const newContact = { ...values, id: nanoid() };
-    dispatch(addContact(newContact));
+    dispatch(addContact(values));
     actions.resetForm();
   };
 
